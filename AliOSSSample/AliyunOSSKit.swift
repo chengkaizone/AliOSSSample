@@ -27,7 +27,7 @@ class AliyunOSSKit: NSObject {
         
         conf.maxRetryCount = 2
         conf.timeoutIntervalForRequest = 30
-        conf.timeoutIntervalForResource = TimeInterval(14 * 60 * 60)
+        conf.timeoutIntervalForResource = TimeInterval(24 * 60 * 60)
         
         let client = OSSClient(endpoint: endPoint, credentialProvider: credential, clientConfiguration: conf)
         
