@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E470B9F1DFFF75600F6F74E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E470B9E1DFFF75600F6F74E /* AppDelegate.swift */; };
+		7E470BA11DFFF75600F6F74E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E470BA01DFFF75600F6F74E /* ViewController.swift */; };
+		7E470BA41DFFF75600F6F74E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E470BA21DFFF75600F6F74E /* Main.storyboard */; };
+		7E470BA61DFFF75600F6F74E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E470BA51DFFF75600F6F74E /* Assets.xcassets */; };
+		7E470BA91DFFF75600F6F74E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E470BA71DFFF75600F6F74E /* LaunchScreen.storyboard */; };
+		7E470BB11DFFF79100F6F74E /* AliyunOSSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E470BB01DFFF79100F6F74E /* AliyunOSSiOS.framework */; };
+		7E470BB31DFFF83600F6F74E /* AliyunOSSKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E470BB21DFFF83600F6F74E /* AliyunOSSKit.swift */; };
+		7E470BB71E00084500F6F74E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E470BB61E00084500F6F74E /* libresolv.tbd */; };
+		7E470BB91E00132000F6F74E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E470BB81E00132000F6F74E /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E470B9B1DFFF75600F6F74E /* AliOSSSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliOSSSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E470B9E1DFFF75600F6F74E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E470BA01DFFF75600F6F74E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E470BA31DFFF75600F6F74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E470BA51DFFF75600F6F74E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E470BA81DFFF75600F6F74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E470BAA1DFFF75600F6F74E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E470BB01DFFF79100F6F74E /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = "<group>"; };
+		7E470BB21DFFF83600F6F74E /* AliyunOSSKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliyunOSSKit.swift; sourceTree = "<group>"; };
+		7E470BB41E00072700F6F74E /* AliOSSSample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AliOSSSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		7E470BB61E00084500F6F74E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		7E470BB81E00132000F6F74E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E470B981DFFF75600F6F74E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E470BB91E00132000F6F74E /* SystemConfiguration.framework in Frameworks */,
+				7E470BB71E00084500F6F74E /* libresolv.tbd in Frameworks */,
+				7E470BB11DFFF79100F6F74E /* AliyunOSSiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E470B921DFFF75600F6F74E = {
+			isa = PBXGroup;
+			children = (
+				7E470B9D1DFFF75600F6F74E /* AliOSSSample */,
+				7E470B9C1DFFF75600F6F74E /* Products */,
+				7E470BB51E00084500F6F74E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7E470B9C1DFFF75600F6F74E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E470B9B1DFFF75600F6F74E /* AliOSSSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E470B9D1DFFF75600F6F74E /* AliOSSSample */ = {
+			isa = PBXGroup;
+			children = (
+				7E470BB01DFFF79100F6F74E /* AliyunOSSiOS.framework */,
+				7E470B9E1DFFF75600F6F74E /* AppDelegate.swift */,
+				7E470BA01DFFF75600F6F74E /* ViewController.swift */,
+				7E470BA21DFFF75600F6F74E /* Main.storyboard */,
+				7E470BA51DFFF75600F6F74E /* Assets.xcassets */,
+				7E470BA71DFFF75600F6F74E /* LaunchScreen.storyboard */,
+				7E470BAA1DFFF75600F6F74E /* Info.plist */,
+				7E470BB21DFFF83600F6F74E /* AliyunOSSKit.swift */,
+				7E470BB41E00072700F6F74E /* AliOSSSample-Bridging-Header.h */,
+			);
+			path = AliOSSSample;
+			sourceTree = "<group>";
+		};
+		7E470BB51E00084500F6F74E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E470BB81E00132000F6F74E /* SystemConfiguration.framework */,
+				7E470BB61E00084500F6F74E /* libresolv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E470B9A1DFFF75600F6F74E /* AliOSSSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E470BAD1DFFF75600F6F74E /* Build configuration list for PBXNativeTarget "AliOSSSample" */;
+			buildPhases = (
+				7E470B971DFFF75600F6F74E /* Sources */,
+				7E470B981DFFF75600F6F74E /* Frameworks */,
+				7E470B991DFFF75600F6F74E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AliOSSSample;
+			productName = AliOSSSample;
+			productReference = 7E470B9B1DFFF75600F6F74E /* AliOSSSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E470B931DFFF75600F6F74E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = tony;
+				TargetAttributes = {
+					7E470B9A1DFFF75600F6F74E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 999QGLNSYB;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7E470B961DFFF75600F6F74E /* Build configuration list for PBXProject "AliOSSSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E470B921DFFF75600F6F74E;
+			productRefGroup = 7E470B9C1DFFF75600F6F74E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E470B9A1DFFF75600F6F74E /* AliOSSSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E470B991DFFF75600F6F74E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E470BA91DFFF75600F6F74E /* LaunchScreen.storyboard in Resources */,
+				7E470BA61DFFF75600F6F74E /* Assets.xcassets in Resources */,
+				7E470BA41DFFF75600F6F74E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E470B971DFFF75600F6F74E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E470BA11DFFF75600F6F74E /* ViewController.swift in Sources */,
+				7E470B9F1DFFF75600F6F74E /* AppDelegate.swift in Sources */,
+				7E470BB31DFFF83600F6F74E /* AliyunOSSKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7E470BA21DFFF75600F6F74E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E470BA31DFFF75600F6F74E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E470BA71DFFF75600F6F74E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E470BA81DFFF75600F6F74E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E470BAB1DFFF75600F6F74E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E470BAC1DFFF75600F6F74E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E470BAE1DFFF75600F6F74E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 999QGLNSYB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AliOSSSample",
+				);
+				INFOPLIST_FILE = AliOSSSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tony.alioss.AliOSSSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/AliOSSSample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7E470BAF1DFFF75600F6F74E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 999QGLNSYB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AliOSSSample",
+				);
+				INFOPLIST_FILE = AliOSSSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tony.alioss.AliOSSSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/AliOSSSample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E470B961DFFF75600F6F74E /* Build configuration list for PBXProject "AliOSSSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E470BAB1DFFF75600F6F74E /* Debug */,
+				7E470BAC1DFFF75600F6F74E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E470BAD1DFFF75600F6F74E /* Build configuration list for PBXNativeTarget "AliOSSSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E470BAE1DFFF75600F6F74E /* Debug */,
+				7E470BAF1DFFF75600F6F74E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E470B931DFFF75600F6F74E /* Project object */;
+}
