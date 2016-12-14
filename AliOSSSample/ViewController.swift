@@ -44,7 +44,16 @@ class ViewController: UIViewController {
         let filepath = saveImage(image: previewImageView.image!, imageName: filename)
         
         NSLog("upload path: \(filepath)")
-        AliyunOSSKit.uploadObjectAsync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/")
+        // AliyunOSSKit.uploadObjectAsync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/")
+        
+        let url = AliyunOSSKit.uploadObjectSync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/", uploadProgressBlock: ({(bytesSent: Int64, totalByteSent: Int64, totalBytesExpectedToSend: Int64) in
+            
+            NSLog("%lld, %lld, %lld", bytesSent, totalByteSent, totalBytesExpectedToSend);
+        }))
+        
+        if url != nil {
+            NSLog("result: \(url!)")
+        }
         
     }
     

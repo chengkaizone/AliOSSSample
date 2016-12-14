@@ -37,7 +37,7 @@ class AliyunOSSKit: NSObject {
     /** 
      * 上传单个文件
      */
-    public class func uploadObjectAsync(fileURL: URL, filename: String, resourcePath: String?) {
+    public class func uploadObjectAsync(fileURL: URL, filename: String, resourcePath: String?, uploadProgressBlock: OSSNetworkingUploadProgressBlock?) {
         
         let put = OSSPutObjectRequest()
         
@@ -50,12 +50,7 @@ class AliyunOSSKit: NSObject {
         }
         
         put.uploadingFileURL = fileURL
-        
-//        typedef void (^OSSNetworkingUploadProgressBlock) (int64_t bytesSent, int64_t totalBytesSent, int64_t totalBytesExpectedToSend);
-        
-//        put.uploadProgress = (bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) ->Void {
-//            
-//        }
+        put.uploadProgress = uploadProgressBlock
         
         put.contentType = ""
         put.contentMd5 = ""
@@ -70,6 +65,10 @@ class AliyunOSSKit: NSObject {
             
             if task.error == nil {
                 NSLog("upload \(put.objectKey) success!")
+                
+                var srr = endPoint.components(separatedBy: "//")
+                let prefix = "\(srr[0])//\(bucketName).\(srr[1])"
+                return "\(prefix)/\(put.objectKey!)"
             } else {
                 NSLog("upload \(put.objectKey) failed, error: \(task.error!.localizedDescription)")
             }
@@ -81,7 +80,7 @@ class AliyunOSSKit: NSObject {
     /**
      *
      */
-    public class func uploadObjectSync(fileURL: URL, filename: String, resourcePath: String?) {
+    public class func uploadObjectSync(fileURL: URL, filename: String, resourcePath: String?, uploadProgressBlock: OSSNetworkingUploadProgressBlock?) ->String? {
         
         let put = OSSPutObjectRequest()
         
@@ -94,6 +93,7 @@ class AliyunOSSKit: NSObject {
         }
         
         put.uploadingFileURL = fileURL
+        put.uploadProgress = uploadProgressBlock
 
         put.contentType = ""
         put.contentMd5 = ""
@@ -106,12 +106,16 @@ class AliyunOSSKit: NSObject {
         putTask?.waitUntilFinished()
         
         if putTask?.error == nil {
-            NSLog("upload \(put.objectKey) success!")
+            NSLog("\(put.objectKey!) upload success!")
+            
+            var srr = endPoint.components(separatedBy: "//")
+            let prefix = "\(srr[0])//\(bucketName).\(srr[1])"
+            return "\(prefix)/\(put.objectKey!)"
         } else {
-            NSLog("upload \(put.objectKey) failed, error: \(putTask!.error!.localizedDescription)")
+            NSLog("\(put.objectKey!) upload failed, error: \(putTask!.error!.localizedDescription)")
         }
         
-        
+        return nil
     }
     
     
