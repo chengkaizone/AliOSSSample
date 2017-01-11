@@ -16,6 +16,7 @@
 		7E470BB31DFFF83600F6F74E /* AliyunOSSKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E470BB21DFFF83600F6F74E /* AliyunOSSKit.swift */; };
 		7E470BB71E00084500F6F74E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E470BB61E00084500F6F74E /* libresolv.tbd */; };
 		7E470BB91E00132000F6F74E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E470BB81E00132000F6F74E /* SystemConfiguration.framework */; };
+		7E4A697D1E260A5700C1A789 /* AdviseImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A697C1E260A5700C1A789 /* AdviseImageViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7E470BB41E00072700F6F74E /* AliOSSSample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AliOSSSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E470BB61E00084500F6F74E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		7E470BB81E00132000F6F74E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7E4A697C1E260A5700C1A789 /* AdviseImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviseImageViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				7E470BAA1DFFF75600F6F74E /* Info.plist */,
 				7E470BB21DFFF83600F6F74E /* AliyunOSSKit.swift */,
 				7E470BB41E00072700F6F74E /* AliOSSSample-Bridging-Header.h */,
+				7E4A697C1E260A5700C1A789 /* AdviseImageViewCell.swift */,
 			);
 			path = AliOSSSample;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				7E470BA11DFFF75600F6F74E /* ViewController.swift in Sources */,
 				7E470B9F1DFFF75600F6F74E /* AppDelegate.swift in Sources */,
+				7E4A697D1E260A5700C1A789 /* AdviseImageViewCell.swift in Sources */,
 				7E470BB31DFFF83600F6F74E /* AliyunOSSKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +344,7 @@
 				7E470BAF1DFFF75600F6F74E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

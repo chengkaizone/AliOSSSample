@@ -2,16 +2,20 @@
 //  ViewController.swift
 //  AliOSSSample
 //
-//  Created by joinhov on 2016/12/13.
-//  Copyright © 2016年 tony. All rights reserved.
+//  Created by tony on 2017/1/11.
+//  Copyright © 2017年 chengkaizone. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var mCollectionView: UICollectionView!
+    
+    // 建议图片(不超过5张)
+    var adviseImages: [UIImage] = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,38 +27,73 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func loadImageAction(_ sender: Any) {
+    // load image
+    func loadImage() {
         
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
-    
+        
         self.present(picker, animated: true, completion: nil)
     }
 
     @IBAction func uploadAction(_ sender: Any) {
         
-        if previewImageView.image == nil {
-            NSLog("请先加载图片")
+        let adviseStr = textView.text!
+            
+        if adviseStr == "" || adviseStr.characters.count < 10 {
+            
+            NSLog("建议不得少于10个字符喔~")
             return
         }
         
-        let filename = String.init(format: "%lu.jpg", Int64(Date().timeIntervalSince1970))
-        let filepath = saveImage(image: previewImageView.image!, imageName: filename)
+        // 路径列表
+        var paths: [(String, String)] = [(String, String)]()
         
-        NSLog("upload path: \(filepath)")
-        // AliyunOSSKit.uploadObjectAsync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/")
-        
-        let url = AliyunOSSKit.uploadObjectSync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/", uploadProgressBlock: ({(bytesSent: Int64, totalByteSent: Int64, totalBytesExpectedToSend: Int64) in
+        for image in self.adviseImages {
             
-            NSLog("%lld, %lld, %lld", bytesSent, totalByteSent, totalBytesExpectedToSend);
-        }))
-        
-        if url != nil {
-            NSLog("result: \(url!)")
+            let filename = String.init(format: "advise_%lu.jpg", Int64(Date().timeIntervalSince1970 * 1000))
+            let filepath = saveImage(image: image, imageName: filename)
+            
+            NSLog("upload path:\(filename)  \(filepath)")
+            paths.append((filepath, filename))
         }
         
+        DispatchQueue.global().async {
+            
+            for (filepath, filename) in paths {// 同步上传
+                
+                // AliyunOSSKit.uploadObjectAsync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/")
+                
+                let url = AliyunOSSKit.uploadObjectSync(fileURL: URL(fileURLWithPath: filepath), filename: filename, resourcePath: "image/", uploadProgressBlock: ({(bytesSent: Int64, totalByteSent: Int64, totalBytesExpectedToSend: Int64) in
+                    
+                    NSLog("%lld, %lld, %lld", bytesSent, totalByteSent, totalBytesExpectedToSend);
+                }))
+                
+                if url != nil {
+                    NSLog("result: \(url!)")
+                }
+                
+                do {
+                    // 上传后删除路径
+                    try FileManager.default.removeItem(at: URL(fileURLWithPath: filepath))
+                } catch let error {
+                    
+                    NSLog("upload error: \(error.localizedDescription)")
+                }
+
+            }
+            
+            // 提交提取的建议内容
+            NSLog("advise: \(adviseStr)")
+            
+            DispatchQueue.main.async {
+                
+            }
+            
+        }
+
     }
     
     // 保存图片并返回绝对路径
@@ -75,12 +114,66 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if self.adviseImages.count < 5 {// 小于5时需要显示添加选项
+            return self.adviseImages.count + 1
+        }
+        
+        return 5
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdviseImageViewCell", for: indexPath) as! AdviseImageViewCell
+        cell.delegate = self
+        
+        if indexPath.row >= self.adviseImages.count {// 显示
+            cell.btDel.isHidden = true
+            // 显示添加图片
+        } else {
+            cell.btDel.isHidden = false
+            
+            let image = self.adviseImages[indexPath.row]
+            cell.imageView.image = image
+        }
+        
+        return cell
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.loadImage()
+    }
+    
+}
+
+extension ViewController: AdviseImageViewCellDelegate {
+    
+    // 删除某个图片
+    func cellDelete(cell: AdviseImageViewCell) {
+        
+        if let indexPath = self.mCollectionView.indexPath(for: cell) {
+            self.adviseImages.remove(at: indexPath.row)
+        }
+        
+        self.mCollectionView.reloadData()
+    }
+    
+}
+
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         print("\(info)")
-        previewImageView.image = info["UIImagePickerControllerEditedImage"] as? UIImage
+        if let image = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            self.adviseImages.append(image)
+            self.mCollectionView.reloadData()
+        }
+        
         picker.dismiss(animated: true, completion: nil)
     }
     

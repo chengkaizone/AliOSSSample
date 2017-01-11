@@ -2,8 +2,8 @@
 //  AliOSSSample-Bridging-Header.h
 //  AliOSSSample
 //
-//  Created by joinhov on 2016/12/13.
-//  Copyright © 2016年 tony. All rights reserved.
+//  Created by tony on 2017/1/11.
+//  Copyright © 2017年 chengkaizone. All rights reserved.
 //
 
 #ifndef AliOSSSample_Bridging_Header_h
